@@ -99,6 +99,7 @@ public class RNXUpdateModule extends ReactContextBaseJavaModule {
 
             WritableMap result = Arguments.createMap();
             result.merge(map);
+            result.putInt("versionCode", UpdateUtils.getVersionCode(mApplication));
             promise.resolve(result);
         } catch (Exception e) {
             e.printStackTrace();
@@ -106,6 +107,12 @@ public class RNXUpdateModule extends ReactContextBaseJavaModule {
         }
     }
 
+
+    @ReactMethod
+    public int getAppversionCode() {
+        int appversionCode = UpdateUtils.getVersionCode(mApplication)
+        return appversionCode
+    }
 
     /**
      * 版本更新
