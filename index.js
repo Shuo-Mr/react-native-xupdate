@@ -212,6 +212,10 @@ const XUpdate = {
             retryUrl: retryUrl,
         });
     },
+
+    getAppversionCode: () => {
+        return RNXUpdate.getAppversionCode();
+    }
 };
 
 export {InitArgs, UpdateArgs, UpdateEntity, UpdateParser, XUpdate};

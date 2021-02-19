@@ -109,10 +109,11 @@ public class RNXUpdateModule extends ReactContextBaseJavaModule {
 
 
     @ReactMethod
-    public int getAppversionCode() {
+    public void getAppversionCode(Promise promise) {
         int appversionCode = UpdateUtils.getVersionCode(mApplication);
-        return appversionCode;
+        promise.resolve(appversionCode);
     }
+
 
     /**
      * 版本更新
